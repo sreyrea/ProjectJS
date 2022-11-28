@@ -1,6 +1,29 @@
 nav .nav-top {
   background-color: #2FA78A;
   color: white;
+  padding: 20px;
+  font-size: 25px;
+  text-align: center;
+}
+nav .nav-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+nav .nav-bottom .logo img {
+  width: 40%;
+}
+nav .nav-bottom .nav-right {
+  width: 35%;
+}
+nav .nav-bottom .nav-right a {
+  background-color: #2FA78A;
+  border-radius: 15px;
+  padding: 10px;
+  justify-content: space-evenly;
+  text-decoration: none;
 }
 
 * {
