@@ -26,6 +26,14 @@ nav .nav-bottom .nav-right a {
   text-decoration: none;
 }
 
+.footer .footer-top {
+  background-color: #2FA78A;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+}
+
 * {
   margin: 0;
   padding: 0;
