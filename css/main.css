@@ -178,14 +178,21 @@ nav .nav-bottom .nav-right a {
   display: flex;
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
-
 .our-product {
   margin: 0px;
   margin-top: 20px;
   margin-bottom: 35%;
+  margin-left: 10px;
+}
+.our-product .seach-hear .button-add {
+  margin-top: 10px;
+}
+.our-product .seach-hear .button-add button {
+  padding: 10px;
+  font-size: 20px;
+  border: none;
+  background-color: #2FA78A;
+  border-radius: 10px;
 }
 
 .make-up {
@@ -227,6 +234,14 @@ nav .nav-bottom .nav-right a {
 .make-up .item .text .tilte p {
   font-size: 20px;
   color: rgb(44, 40, 40);
+}
+.make-up .item .edit-product {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.make-up .item .edit-product a i {
+  font-size: 40px;
 }
 .make-up .item .see-more {
   padding: 15px;
@@ -405,6 +420,29 @@ label, input {
     line-height: 21px;
   }
 }
+dialog {
+  background-color: #2FA78A;
+  width: 60%;
+  height: 70%;
+  border-radius: 10px;
+  margin: auto;
+}
+dialog header {
+  margin-left: 10px;
+  font-size: 30px;
+}
+dialog section {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+dialog section input {
+  padding: 10px;
+}
+dialog section label {
+  font-size: 20px;
+}
+
 * {
   margin: 0;
   padding: 0;

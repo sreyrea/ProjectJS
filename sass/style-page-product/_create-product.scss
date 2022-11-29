@@ -1,0 +1,25 @@
+
+
+
+dialog{
+    background-color:$main-color;
+    width: 60%;
+    height: 70%;
+    border-radius: 10px;
+    margin: auto;
+    header{
+        margin-left: 10px;
+        font-size: 30px;
+    }
+    section{
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+        input{
+            padding: 10px;
+        }
+        label{
+            font-size: 20px;
+        }
+    }
+}

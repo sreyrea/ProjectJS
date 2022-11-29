@@ -1,11 +1,22 @@
 
-::-webkit-scrollbar {
-    display: none;
-}
 .our-product{
     margin: 0px;
     margin-top: 20px;
     margin-bottom: 35%;
+    margin-left: 10px;
+    .seach-hear{
+        .button-add{
+            margin-top: 10px;
+            button{
+                padding: 10px;
+                font-size: 20px;
+                border: none;
+                background-color: $main-color;
+                border-radius: 10px;
+            }
+
+        }
+    }
 }
 .make-up{
     text-align: center;
@@ -44,6 +55,16 @@
                     font-size: 20px;
                     color: rgb(44, 40, 40);
                 }                
+            }
+        }
+        .edit-product{
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-evenly;
+            a{
+                i{
+                    font-size: 40px;
+                }
             }
         }
         .see-more{
