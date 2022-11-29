@@ -71,7 +71,7 @@
         background-color: $main-color;
         align-items: flex-end;
         text-align: center;
-        height: 60vh;
+        height: 55vh;
         width: 40%;
         margin-top: 80px;
         margin-bottom: 20px;
@@ -133,6 +133,27 @@ form {
     margin-top: -100px;
     margin-bottom: 20px;
   }
+    button {
+        width: 100%;
+        height: 2.75em;
+        font-size: 1em;
+        font-family:Helvetica, sans-serif;
+        background-color: #e56a9f;
+        border: none;
+        color: #fff;
+        border-radius:15px;
+        margin: 0.25em 0 0 0;
+        padding: 5px;
+    }
+    .save-data{
+        display: flex;
+        width: 20%;
+        justify-content: space-between;
+        align-items: center;
+        input{
+            font-size: 10px;
+        }
+    }
 }
 form label {
   position: relative;
@@ -151,22 +172,12 @@ form label > span {
 }
 label,input {
   width: 100%;
+  
 }
 .exp {
   width: calc(75% - 0.75em);
 }
-button {
-  width: 100%;
-  height: 2.75em;
-  font-size: 1em;
-  font-family: Raleway, Helvetica, sans-serif;
-  background-color: #e56a9f;
-  border: none;
-  color: #fff;
-  border-radius: 0.25em;
-  margin: 0.25em 0 0 0;
-  padding: 10px;
-}
+
 
 // ###################### for star########################################
 .star-rating {

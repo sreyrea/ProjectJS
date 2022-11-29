@@ -245,7 +245,7 @@ nav .nav-bottom .nav-right a {
   background-color: #2FA78A;
   align-items: flex-end;
   text-align: center;
-  height: 60vh;
+  height: 55vh;
   width: 40%;
   margin-top: 80px;
   margin-bottom: 20px;
@@ -306,6 +306,27 @@ form .visa-img {
   margin-top: -100px;
   margin-bottom: 20px;
 }
+form button {
+  width: 100%;
+  height: 2.75em;
+  font-size: 1em;
+  font-family: Helvetica, sans-serif;
+  background-color: #e56a9f;
+  border: none;
+  color: #fff;
+  border-radius: 15px;
+  margin: 0.25em 0 0 0;
+  padding: 5px;
+}
+form .save-data {
+  display: flex;
+  width: 20%;
+  justify-content: space-between;
+  align-items: center;
+}
+form .save-data input {
+  font-size: 10px;
+}
 
 form label {
   position: relative;
@@ -332,19 +353,6 @@ label, input {
 
 .exp {
   width: calc(75% - 0.75em);
-}
-
-button {
-  width: 100%;
-  height: 2.75em;
-  font-size: 1em;
-  font-family: Raleway, Helvetica, sans-serif;
-  background-color: #e56a9f;
-  border: none;
-  color: #fff;
-  border-radius: 0.25em;
-  margin: 0.25em 0 0 0;
-  padding: 10px;
 }
 
 .star-rating {
