@@ -140,19 +140,40 @@ nav .nav-bottom .nav-right a {
 .our-product {
   width: 100%;
   height: 50vh;
+  margin-top: 5%;
+  margin-left: 5%;
 }
-.our-product .searcg-hear {
-  width: 100%;
+.our-product .seach-hear {
+  width: 90%;
   display: flex;
   justify-content: space-between;
 }
-.our-product .searcg-hear .search {
+.our-product .seach-hear p {
+  font-size: 2.5rem;
+}
+.our-product .seach-hear .search {
+  width: 80%;
+  display: flex;
+  background-color: #2FA78A;
   border: none;
+  border-radius: 15px;
+  padding: 4px;
+}
+.our-product .seach-hear .search input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: none;
   border-radius: 10px;
 }
-.our-product .searcg-hear .search input {
-  padding: 20px;
-  background-color: #2FA78A;
+.our-product .seach-hear .search i {
+  width: 5%;
+  font-size: 30px;
+  margin-top: 5px;
+}
+.our-product .card-product {
+  width: 80%;
+  display: flex;
 }
 
 * {
