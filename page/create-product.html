@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../css/main.min.css">
+    <script src="../js/create-product.js" defer></script>
     <title>Product</title>
 </head>
 <body>
@@ -26,11 +27,12 @@
         </div>
     </nav>
     <!-- ###########################################center######################################## -->
-    
+    <h1>You can add your product here</h1> 
+    <button class="add-product">Create product</button>
     <div class="our-product">
         <div class="seach-hear">
-            <p>You can add your product here</p>  
-            <dialog open>
+             
+            <dialog open; style="display: none;">
                 <header>Create Your product</header>
                 <section>
                   <label>Name product</label>
@@ -40,146 +42,18 @@
                   <label>Information about your product</label>
                   <input id="detail-more" type="text" placeholder="detail more">
                   <label>Price</label>
-                  <input id="$$" type="text" placeholder="$$" />
+                  <input id="price" type="text" placeholder="$$" />
                 </section>
-                <!-- <menu>
+                <menu>
                     <button onclick="onCancel()">Cancel</button>
-                  <button onclick="onCreate()" id="create">Create</button> 
-                </menu> -->
+                    <button onclick="onCreate()" id="create">Create</button> 
+                </menu>
             </dialog>
         </div>
         
         <div class="make-up">
-            <div class="item">
-                <div class="img">
-                    <img src="../img/bb.png" alt="">
-                </div>
-                <div class="text">
-                    <div class="tilte">
-                        <h3>BB cream</h3>
-                        <p>1.99$</p>
-                    </div>
-                </div>
-                <div class="edit-product">
-                    <a href="">
-                        <img src="../img/delete.png" alt="">
-                    </a>
-                    <a href="">
-                        <img src="../img/edit.png" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="item">
-                <div class="img">
-                    <img src="../img/hd.png" alt="">
-                </div>
-                <div class="text">
-                    <div class="tilte">
-                        <h3>Lip balm</h3>
-                        <p>2$</p>
-                    </div>
-                </div>
-                <div class="edit-product">
-                    <a href="">
-                        <img src="../img/delete.png" alt="">
-                    </a>
-                    <a href="">
-                        <img src="../img/edit.png" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="item">
-                <div class="img">
-                    <img src="../img/merit.png" alt="">
-                </div>
-                <div class="text">
-                    <div class="tilte">
-                        <h3>Mascara</h3>
-                        <p>0.99$</p>
-                    </div>
-                </div>
-                <div class="edit-product">
-                    <a href="">
-                        <img src="../img/delete.png" alt="">
-                    </a>
-                    <a href="">
-                        <img src="../img/edit.png" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="item">
-                <div class="img">
-                    <img src="../img/serom.png" alt="">
-                </div>
-                <div class="text">
-                    <div class="tilte">
-                        <h3>Serum</h3>
-                        <p>2.99$</p>
-                    </div>
-                </div>
-                <div class="edit-product">
-                    <a href="">
-                        <img src="../img/delete.png" alt="">
-                    </a>
-                    <a href="">
-                        <img src="../img/edit.png" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="item">
-                <div class="img">
-                    <img src="../img/set-makeup.png" alt="">
-                </div>
-                <div class="text">
-                    <div class="tilte">
-                        <h3>Serum 1 set</h3>
-                        <div class="star-rating">
-                            <input type="checkbox" name="stars" id="star-a4" value="21"/>
-                            <label for="star-a4"></label>
-                      
-                            <input type="checkbox" name="stars" id="star-b4" value="22"/>
-                            <label for="star-b4"></label>
-                        
-                            <input type="checkbox" name="stars" id="star-c4" value="23"/>
-                            <label for="star-c4"></label>
-                        
-                            <input type="checkbox" name="stars" id="star-d4" value="24"/>
-                            <label for="star-d4"></label>
-                        
-                            <input type="checkbox" name="stars" id="star-e4" value="25"/>
-                            <label for="star-e4"></label>
-                        </div>
-                        <p>10$</p>
-                    </div>
-                </div>
-                <div class="edit-product">
-                    <a href="">
-                        <img src="../img/delete.png" alt="">
-                    </a>
-                    <a href="">
-                        <img src="../img/edit.png" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="item">
-                <div class="img">
-                    <img src="../img/brush.png" alt="">
-                </div>
-                <div class="text">
-                    <div class="tilte">
-                        <h3>Brush 1 set</h3>
-                        <p>10.99$</p>
-                    </div>
-                </div>
-                <div class="edit-product">
-                    <a href="">
-                        <img src="../img/delete.png" alt="">
-                    </a>
-                    <a href="">
-                        <img src="../img/edit.png" alt="">
-                    </a>
-                </div>
-            </div>
+
+            
             
         </div>
         

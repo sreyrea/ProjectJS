@@ -420,6 +420,16 @@ label, input {
     line-height: 21px;
   }
 }
+.add-product {
+  background-color: #2FA78A;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px;
+  font-size: 30px;
+}
+
 dialog {
   background-color: #2FA78A;
   width: 60%;
@@ -440,6 +450,16 @@ dialog section input {
   padding: 10px;
 }
 dialog section label {
+  font-size: 20px;
+}
+
+menu button {
+  background-color: white;
+  color: black;
+  padding: 6px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px;
   font-size: 20px;
 }
 

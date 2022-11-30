@@ -1,5 +1,14 @@
 
-
+.add-product{
+    background-color: $main-color;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    margin: 10px;
+    font-size: 30px;
+    
+}
 
 dialog{
     background-color:$main-color;
@@ -21,5 +30,16 @@ dialog{
         label{
             font-size: 20px;
         }
+    }
+}
+menu{
+    button{
+        background-color:white;
+        color: black;
+        padding: 6px;
+        border-radius: 10px;
+        border: none;
+        margin: 10px;
+        font-size: 20px;  
     }
 }
