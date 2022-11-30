@@ -88,12 +88,14 @@
 
 .detail-product{
     display: flex;
+    
     .visa-card{
         background-color: $main-color;
         align-items: flex-end;
         text-align: center;
         height: 55vh;
         width: 40%;
+        margin: auto;
         margin-top: 80px;
         margin-bottom: 20px;
         border-radius: 20px;
@@ -146,6 +148,7 @@ form {
   width: 100%;
   padding: 0.75em;
   display: flex;
+  margin: auto;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
