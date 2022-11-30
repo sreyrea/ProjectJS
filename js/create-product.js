@@ -29,10 +29,16 @@ let product =[
 
 
 function addProduct() {
-    
-    
+    let card = document.querySelectorAll(".item")
+    if (card.length>0){
+        for (let values of card){
+            values.parentNode.removeChild(values)
+        }
+    }
     for (let index = 0; index < product.length; index++){
         myPro = product[index];
+        myPro.dataset_index = index;
+        // console.log(myPro);
 
         let item = document.createElement('div');
         item.className = "item";
@@ -57,7 +63,6 @@ function addProduct() {
         // name_product.textContent = document.querySelector("#name");
     
         let price_product = document.createElement('p');
-    
         price_product.textContent= myPro.price;
         
     
@@ -69,6 +74,7 @@ function addProduct() {
 
         let aDelete = document.createElement("a");
         aDelete.href = "";
+
         let imgDelete = document.createElement("img");
         imgDelete.className="delete";
         imgDelete.src = "../img/delete.png";
@@ -78,7 +84,7 @@ function addProduct() {
         aEdit.href = "";
         aEdit.addEventListener("click",editProduct);
         let imgEdit = document.createElement("img");
-        imgEdit.className = "edit";
+        imgEdit.className = "editpro";
         imgEdit.src = "../img/edit.png";
         aDelete.appendChild(imgDelete);
         aEdit.appendChild(imgEdit);
@@ -112,6 +118,8 @@ function show(element) {
 
 function onClickAddPro(e){
     show(dom_dialog)
+    let text = document.getElementById("create");
+    text.textContent = "Create";
 }
 
 
@@ -133,39 +141,49 @@ function updateData() {
         product =  data;
     }
 }
+
+
+
 // edit product-------------------------------------------------------------!
+
+
 
 function editProduct(event) {
     event.preventDefault();
     // show the dialog --------------------------!
     show(dom_dialog);
+    let text = document.getElementById("create");
+    text.textContent = "Update";
+    let edit = document.querySelectorAll(".editpro");
+    for (let index in edit){
+        if (edit[index]==event.target){
+            console.log(edit[index].parentElement.parentElement)
 
-    document.querySelector("menu").lastElementChild.textContent= "Edit";
-    let index = event.target.parentElement.parentElement.index;
+            let card_dialog = document.querySelector('dialog');
+            card_dialog.style.display = "block";
 
-    k = document.querySelector(".name_product").value = product[index].name_product;
-    console.log(k);
-    
+            let btn_update = document.querySelector("#create");
+            btn_update.addEventListener('click',updateData)
 
-
-
-
-    
-
-
-    
-    
+        }
+    }
 }
 
 // delete product ----------------------------------------------------------!
 
+
+
+
+
 function deleteProduct(event) {
     event.preventDefault();
-    if (event.target.className=="delete"){
-        event.target.parentElement.parentElement.parentElement.remove();
-        // console.log("love")
+    let allproduct = document.querySelectorAll(".delete");
+    for (let i in allproduct){
+        if (allproduct[i]){
+            console.log(allproduct[i].parentElement.parentElement.parentElement)
+            event.target.parentElement.parentElement.parentElement.remove();
+        }
     }
-  
 }
 
 
@@ -179,10 +197,15 @@ function onCreate(){
     let newProduct = {};
     newProduct.namePro = document.getElementById("name").value;
     newProduct.price = document.getElementById("price").value;
-    newProduct.Image = document.getElementById("Photos").value; 
+    newProduct.Image = document.getElementById("Photos").value;
+    product.push(newProduct); 
+    console.log(newProduct.Image);
     saveProduct();
+    addProduct();
 }
 
+
+
 saveProduct();
-updateData();
+// updateData();
 addProduct();
