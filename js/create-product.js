@@ -6,27 +6,27 @@ addPro.addEventListener("click",onClickAddPro);
 
 let product =[
     {
-        namePro:"Brush Delete set",
+        namePro:"Brush 1 set",
         price:"0.99$",
         Image:"../img/brush.png",
         Detial:"Smoth"
     },
     {
-        namePro:"Brush Delete set",
+        namePro:"BB cream",
         price:"2.99$",
         Image:"../img/bb.png",
         Detial:"Smoth"
     },
     {
-        namePro:"Brush Delete set",
+        namePro:"maskara",
         price:"1.99$",
         Image:"../img/merit.png",
         Detial:"Smoth"
     },
     {
-        namePro:"Brush Delete set",
+        namePro:"Serom",
         price:"0.99$",
-        Image:"../img/brush.png",
+        Image:"../img/serom.png",
         Detial:"Smoth"
     },
 ];
@@ -80,7 +80,8 @@ function addProduct() {
         aDelete.href = "";
 
         let detialInformation = document.createElement("p");
-        detialInformation.className = "detial-information";
+        console.log(detialInformation);
+
         detialInformation.textContent = myPro.Detial;
 
 
@@ -190,19 +191,8 @@ function editProduct(event) {
 
 
 function deleteProduct(event) {
-    // event.preventDefault();
-    // let allproduct = document.querySelectorAll(".delete");
-    // for (let i in allproduct){
-    //     if (allproduct[i]){
-    //         console.log(allproduct[i].parentElement.parentElement.parentElement)
-    //         event.target.parentElement.parentElement.parentElement.remove();
-    //     }
-    // }
-
-    
 
     let index = event.target.parentElement.parentElement.dataset.index;
-
     product.splice(index,1);
 
   // Save to local storage
@@ -233,7 +223,7 @@ function onCreate(){
 }
 
 
-
+// saveProduct();
 updateData();
 addProduct();
 

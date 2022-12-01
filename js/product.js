@@ -34,8 +34,13 @@ function deplyProduct() {
         let title = document.createElement('div');
         title.className = "title";
         
-    
-        let name_product = document.createElement("p");
+        
+        let detialInformation = document.createElement("p");
+        detialInformation.className = "detial-information";
+        detialInformation.textContent = myPro.Detial;
+
+
+        let name_product = document.createElement("h3");
         name_product.className = "name_product";
         name_product.textContent = myPro.namePro;
         // console.log(myPro.namePro);
@@ -52,6 +57,7 @@ function deplyProduct() {
 
         Img.appendChild(getImg);
         title.appendChild(name_product);
+        title.appendChild(detialInformation);
         title.appendChild(price_product);
         // title.appendChild(star);
         title.appendChild(abtn);
