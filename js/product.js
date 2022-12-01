@@ -1,12 +1,5 @@
 let data = JSON.parse(localStorage.getItem("product"));
-const Class_make_up = document.querySelector(".make-up");
-let star = document.querySelector(".star-rating");
-console.log(star);
-
-// console.log(Class_make_up);
-// let dom_dialog = document.querySelector("dialog");
-
-
+let Class_make_up = document.querySelector(".make-up");
 
 function deplyProduct() {
     let card = document.querySelectorAll(".item")
@@ -18,7 +11,7 @@ function deplyProduct() {
     for (let index = 0; index < data.length; index++){
         myPro = data[index];
         myPro.dataset_index = index;
-        // console.log(myPro);
+       
 
         let item = document.createElement('div');
         item.className = "item";
@@ -53,9 +46,6 @@ function deplyProduct() {
         let price_product = document.createElement('p');
         price_product.textContent= myPro.price;
         
-        
-
-        
 
         let aDelete = document.createElement("a");
         aDelete.href = "";
@@ -63,13 +53,34 @@ function deplyProduct() {
         Img.appendChild(getImg);
         title.appendChild(name_product);
         title.appendChild(price_product);
-        title.appendChild(star);
+        // title.appendChild(star);
         title.appendChild(abtn);
         item.appendChild(Img);
         item.appendChild(title);
         Class_make_up.appendChild(item);
+        console.log(Class_make_up);
     }
-    console.log(Class_make_up);
+    
+}
+
+function searchProduct(event) {
+    // 1- Get the search text
+    let searchProductInput = document.querySelector("form-control");
+    let search = searchProductInput.value.toLowerCase()
+    // 2- Loop on all LI {
+    for (let x of product.children) {
+      let title = x.children[0].textContent.toLowerCase()
+      x.style.display = "none";
+      // console.log(title)
+        if (title === search || title.includes(search)){
+            console.log(title)
+            x.style.display = "block";
+  
+        }
+    }
+    
+  
+  console.log(x);
 }
 
 deplyProduct();

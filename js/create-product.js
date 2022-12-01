@@ -9,21 +9,25 @@ let product =[
         namePro:"Brush Delete set",
         price:"0.99$",
         Image:"../img/brush.png",
+        Detial:"Smoth"
     },
     {
         namePro:"Brush Delete set",
         price:"2.99$",
         Image:"../img/bb.png",
+        Detial:"Smoth"
     },
     {
         namePro:"Brush Delete set",
         price:"1.99$",
         Image:"../img/merit.png",
+        Detial:"Smoth"
     },
     {
         namePro:"Brush Delete set",
         price:"0.99$",
         Image:"../img/brush.png",
+        Detial:"Smoth"
     },
 ];
 
@@ -54,7 +58,7 @@ function addProduct() {
         title.className = "title";
         
     
-        let name_product = document.createElement("p");
+        let name_product = document.createElement("h3");
         name_product.className = "name_product";
         name_product.textContent = myPro.namePro;
         // console.log(myPro.namePro);
@@ -75,6 +79,11 @@ function addProduct() {
         let aDelete = document.createElement("a");
         aDelete.href = "";
 
+        let detialInformation = document.createElement("p");
+        detialInformation.className = "detial-information";
+        detialInformation.textContent = myPro.Detial;
+
+
         let imgDelete = document.createElement("img");
         imgDelete.className="delete";
         imgDelete.src = "../img/delete.png";
@@ -94,6 +103,7 @@ function addProduct() {
 
         Img.appendChild(getImg);
         title.appendChild(name_product);
+        title.appendChild(detialInformation);
         title.appendChild(star);
         title.appendChild(price_product);
         item.appendChild(Img);
@@ -101,6 +111,7 @@ function addProduct() {
         item.appendChild(edit);
         Class_make_up.appendChild(item);
     }
+    // saveProduct();
     // console.log(Class_make_up);
 }
 
@@ -167,6 +178,9 @@ function editProduct(event) {
 
         }
     }
+    saveProduct();
+    addProduct();
+    
 }
 
 // delete product ----------------------------------------------------------!
@@ -176,15 +190,29 @@ function editProduct(event) {
 
 
 function deleteProduct(event) {
-    event.preventDefault();
-    let allproduct = document.querySelectorAll(".delete");
-    for (let i in allproduct){
-        if (allproduct[i]){
-            console.log(allproduct[i].parentElement.parentElement.parentElement)
-            event.target.parentElement.parentElement.parentElement.remove();
-        }
-    }
+    // event.preventDefault();
+    // let allproduct = document.querySelectorAll(".delete");
+    // for (let i in allproduct){
+    //     if (allproduct[i]){
+    //         console.log(allproduct[i].parentElement.parentElement.parentElement)
+    //         event.target.parentElement.parentElement.parentElement.remove();
+    //     }
+    // }
+
+    
+
+    let index = event.target.parentElement.parentElement.dataset.index;
+
+    product.splice(index,1);
+
+  // Save to local storage
+
+    saveProduct();
+
+
+    addProduct();
 }
+
 
 
 // create product button--------------------------------------------------!
@@ -206,6 +234,7 @@ function onCreate(){
 
 
 
-saveProduct();
-// updateData();
+updateData();
 addProduct();
+
+saveProduct();
