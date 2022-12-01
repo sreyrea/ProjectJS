@@ -1,5 +1,5 @@
-const Class_make_up = document.querySelector(".make-up");
-// console.log(Class_make_up);
+
+const our_product = document.querySelector(".our-product");
 let dom_dialog = document.querySelector("dialog");
 let addPro = document.querySelector(".add-product");
 addPro.addEventListener("click",onClickAddPro);
@@ -33,24 +33,26 @@ let product =[
 
 
 function addProduct() {
-    let card = document.querySelectorAll(".item")
-    if (card.length>0){
-        for (let values of card){
-            values.parentNode.removeChild(values)
-        }
-    }
+    card = document.querySelector(".make-up");
+    // console.log(card)
+    card.remove();
+    card =document.createElement("div");
+    card.className="make-up";
+    our_product.appendChild(card);
+
     for (let index = 0; index < product.length; index++){
         myPro = product[index];
-        myPro.dataset_index = index;
-        // console.log(myPro);
 
         let item = document.createElement('div');
         item.className = "item";
+        console.log(item)
+        item.dataset.index = index;
     
         let Img = document.createElement('div');
         Img.className = "img";
         
         let getImg =document.createElement("img");
+        getImg.className = "getImg";
         getImg.src = myPro.Image;
 
     
@@ -61,25 +63,34 @@ function addProduct() {
         let name_product = document.createElement("h3");
         name_product.className = "name_product";
         name_product.textContent = myPro.namePro;
-        // console.log(myPro.namePro);
         
 
-        // name_product.textContent = document.querySelector("#name");
     
         let price_product = document.createElement('p');
+        price_product.className = "price_product";
         price_product.textContent= myPro.price;
         
     
         let star = document.createElement("div");
         star.className="star-rating";
+        star.innerHTML = "★ ★ ★ ★ ★";
+        star.style.color="orange";
+        star.style.marginRight = "100px";
+        star.style.marginTop = "10px";
+        star.style.marginBottom = "10px";
 
         let edit = document.createElement("div");
         edit.className="edit-product";
+        edit.style.borderTop = "solid 1px  black";
+        edit.marginTop = "15px";
 
         let aDelete = document.createElement("a");
         aDelete.href = "";
+        aDelete.style.marginRight = "100px";
+        aDelete.style.marginTop = "10px";
 
         let detialInformation = document.createElement("p");
+        detialInformation.className = "detial-information";
         detialInformation.textContent = myPro.Detial;
 
         let imgDelete = document.createElement("img");
@@ -87,17 +98,18 @@ function addProduct() {
         imgDelete.src = "../img/delete.png";
         imgDelete.addEventListener("click",deleteProduct);
 
-        let aEdit = document.createElement("a");
-        aEdit.href = "";
-        aEdit.addEventListener("click",editProduct);
+        
+        
         let imgEdit = document.createElement("img");
         imgEdit.className = "editpro";
         imgEdit.src = "../img/edit.png";
+        imgEdit.addEventListener("click",editProduct);
+        imgEdit.style.marginTop = "10px";
+
         aDelete.appendChild(imgDelete);
-        aEdit.appendChild(imgEdit);
         
         edit.appendChild(aDelete);
-        edit.appendChild(aEdit);
+        edit.appendChild(imgEdit);
 
         Img.appendChild(getImg);
         title.appendChild(name_product);
@@ -107,7 +119,7 @@ function addProduct() {
         item.appendChild(Img);
         item.appendChild(title);
         item.appendChild(edit);
-        Class_make_up.appendChild(item);
+        card.appendChild(item);
     }
     // saveProduct();
     // console.log(Class_make_up);
@@ -134,9 +146,7 @@ function onClickAddPro(e){
 
 // cancel button-------------------------------------------------------!
 
-function onCancel(){
-    hide(dom_dialog)
-}
+
 // save product -------------------------------------------------------------!
 function saveProduct() {
     localStorage.setItem("product", JSON.stringify(product));
@@ -146,7 +156,7 @@ function saveProduct() {
 
 function updateData() {
     let data = JSON.parse(localStorage.getItem("product"));
-    if (product !==null){
+    if (data !==null){
         product =  data;
     }
 }
@@ -158,56 +168,67 @@ function updateData() {
 
 
 function editProduct(event) {
-    event.preventDefault();
+    // event.preventDefault();
     // show the dialog --------------------------!
+    // show(dom_dialog);
+
+    // let text = document.getElementById("create");
+    // text.textContent = "Update";
+    // let edit = document.querySelectorAll(".editpro");
+    // for (let index in edit){
+    //     if (edit[index]==event.target){
+    //         console.log(edit[index].parentElement.parentElement)
+
+    //         let card_dialog = document.querySelector('dialog');
+    //         card_dialog.style.display = "block";
+
+    //         let btn_update = document.querySelector("#create");
+    //         btn_update.addEventListener('click',updateData)
+
+    //     }
+    // }
     show(dom_dialog);
-    let text = document.getElementById("create");
-    text.textContent = "Update";
-    let edit = document.querySelectorAll(".editpro");
-    for (let index in edit){
-        if (edit[index]==event.target){
-            console.log(edit[index].parentElement.parentElement)
+    document.querySelector("menu").lastElementChild.textContent = "Edit";
+    let index = event.target.parentElement.parentElement.dataset.index;
+    console.log(index)
+    let myPro = product[index];
+    document.querySelector(".name_product").value = myPro.namePro;
+    document.querySelector(".price_product").value = myPro.price;
+    document.querySelector(".getImg").value = myPro.Image;
+    document.querySelector(".detial-information").value = myPro.Detial;
+    console.log(myPro)
+    
 
-            let card_dialog = document.querySelector('dialog');
-            card_dialog.style.display = "block";
-
-            let btn_update = document.querySelector("#create");
-            btn_update.addEventListener('click',updateData)
-
-        }
-    }
-    saveProduct();
-    addProduct();
+    product.splice(index,1);
+    // saveProduct();
+    // addProduct();
     
 }
 
+
 // delete product ----------------------------------------------------------!
 
-
-
-
-
 function deleteProduct(event) {
+    event.preventDefault();
 
     let index = event.target.parentElement.parentElement.dataset.index;
+    
+    
+    console.log(index)
     product.splice(index,1);
 
   // Save to local storage
-
     saveProduct();
-
 
     addProduct();
 }
 
-
-
+function onCancel(e){
+    hide(dom_dialog)
+}
 // create product button--------------------------------------------------!
 
-
-  
-
-function onCreate(){
+function onCreate(e){
     hide(dom_dialog); 
     let newProduct = {};
     newProduct.namePro = document.getElementById("name").value;
@@ -215,14 +236,15 @@ function onCreate(){
     newProduct.Image = document.getElementById("Photos").value;
     newProduct.Detial = document.getElementById("detail-more").value;
     product.push(newProduct); 
-    console.log(newProduct.Image);
+    // console.log(newProduct.Image);
+
     saveProduct();
     addProduct();
 }
 
-
 // saveProduct();
 updateData();
-addProduct();
 
+addProduct();
 saveProduct();
+

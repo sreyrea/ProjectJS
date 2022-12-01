@@ -43,10 +43,7 @@ function deplyProduct() {
         let name_product = document.createElement("h3");
         name_product.className = "name_product";
         name_product.textContent = myPro.namePro;
-        // console.log(myPro.namePro);
         
-
-        // name_product.textContent = document.querySelector("#name");
     
         let price_product = document.createElement('p');
         price_product.textContent= myPro.price;
