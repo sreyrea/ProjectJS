@@ -80,10 +80,7 @@ function addProduct() {
         aDelete.href = "";
 
         let detialInformation = document.createElement("p");
-        console.log(detialInformation);
-
         detialInformation.textContent = myPro.Detial;
-
 
         let imgDelete = document.createElement("img");
         imgDelete.className="delete";
@@ -216,6 +213,7 @@ function onCreate(){
     newProduct.namePro = document.getElementById("name").value;
     newProduct.price = document.getElementById("price").value;
     newProduct.Image = document.getElementById("Photos").value;
+    newProduct.Detial = document.getElementById("detail-more").value;
     product.push(newProduct); 
     console.log(newProduct.Image);
     saveProduct();
