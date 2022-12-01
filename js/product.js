@@ -48,6 +48,13 @@ function deplyProduct() {
         let price_product = document.createElement('p');
         price_product.textContent= myPro.price;
         
+        let star = document.createElement("div");
+        star.className="star-rating";
+        star.innerHTML = "★ ★ ★ ★ ★";
+        star.style.color="orange";
+        star.style.marginRight = "100px";
+        star.style.marginTop = "10px";
+        star.style.marginBottom = "10px";
 
         let aDelete = document.createElement("a");
         aDelete.href = "";
@@ -56,7 +63,7 @@ function deplyProduct() {
         title.appendChild(name_product);
         title.appendChild(detialInformation);
         title.appendChild(price_product);
-        // title.appendChild(star);
+        title.appendChild(star);
         title.appendChild(abtn);
         item.appendChild(Img);
         item.appendChild(title);
@@ -82,7 +89,6 @@ function searchProduct(event) {
         }
     }
     
-  
   console.log(x);
 }
 

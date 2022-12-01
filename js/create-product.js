@@ -163,30 +163,14 @@ function updateData() {
 
 
 
+
+
+
 // edit product-------------------------------------------------------------!
 
 
 
 function editProduct(event) {
-    // event.preventDefault();
-    // show the dialog --------------------------!
-    // show(dom_dialog);
-
-    // let text = document.getElementById("create");
-    // text.textContent = "Update";
-    // let edit = document.querySelectorAll(".editpro");
-    // for (let index in edit){
-    //     if (edit[index]==event.target){
-    //         console.log(edit[index].parentElement.parentElement)
-
-    //         let card_dialog = document.querySelector('dialog');
-    //         card_dialog.style.display = "block";
-
-    //         let btn_update = document.querySelector("#create");
-    //         btn_update.addEventListener('click',updateData)
-
-    //     }
-    // }
     show(dom_dialog);
     document.querySelector("menu").lastElementChild.textContent = "Edit";
     let index = event.target.parentElement.parentElement.dataset.index;
