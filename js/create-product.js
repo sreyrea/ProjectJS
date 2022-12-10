@@ -75,9 +75,9 @@ function addProduct() {
         star.className="star-rating";
         star.innerHTML = "★ ★ ★ ★ ★";
         star.style.color="orange";
-        star.style.marginRight = "100px";
-        star.style.marginTop = "10px";
-        star.style.marginBottom = "10px";
+        star.style.marginRight = "80px";
+        star.style.marginTop = "5px";
+        star.style.marginBottom = "5px";
 
         let edit = document.createElement("div");
         edit.className="edit-product";
@@ -145,7 +145,13 @@ function onClickAddPro(e){
 
 
 // cancel button-------------------------------------------------------!
+function clearData(){
 
+    newProduct.namePro = "";
+    newProduct.price = "";
+    newProduct.Image = "";
+    newProduct.Detial = "";
+}
 
 // save product -------------------------------------------------------------!
 function saveProduct() {
@@ -174,18 +180,21 @@ function editProduct(event) {
     show(dom_dialog);
     document.querySelector("menu").lastElementChild.textContent = "Edit";
     let index = event.target.parentElement.parentElement.dataset.index;
+
     console.log(index)
     let myPro = product[index];
-    document.querySelector(".name_product").value = myPro.namePro;
-    document.querySelector(".price_product").value = myPro.price;
-    document.querySelector(".getImg").value = myPro.Image;
-    document.querySelector(".detial-information").value = myPro.Detial;
-    console.log(myPro)
+    document.querySelector("#name").value = myPro.namePro;
+    console.log(myPro.namePro);
+    document.querySelector("#price").value = myPro.price;
+    document.querySelector("#Photos").value = myPro.Image;
+    document.querySelector("#detail-more").value = myPro.Detial;
+    // console.log(myPro)
     
 
     product.splice(index,1);
-    // saveProduct();
+    saveProduct();
     // addProduct();
+
     
 }
 
@@ -195,7 +204,7 @@ function editProduct(event) {
 function deleteProduct(event) {
     event.preventDefault();
 
-    let index = event.target.parentElement.parentElement.dataset.index;
+    let index = event.target.parentElement.parentElement.parentElement.dataset.index;
     
     
     console.log(index)
@@ -213,7 +222,10 @@ function onCancel(e){
 // create product button--------------------------------------------------!
 
 function onCreate(e){
-    hide(dom_dialog); 
+    // clearData();
+    hide(dom_dialog);
+    // clearData();
+    
     let newProduct = {};
     newProduct.namePro = document.getElementById("name").value;
     newProduct.price = document.getElementById("price").value;
@@ -221,13 +233,13 @@ function onCreate(e){
     newProduct.Detial = document.getElementById("detail-more").value;
     product.push(newProduct); 
     // console.log(newProduct.Image);
-
+    
     saveProduct();
     addProduct();
 }
 
-saveProduct();
-// updateData();
+// saveProduct();
+updateData();
 
 addProduct();
 saveProduct();

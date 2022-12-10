@@ -52,9 +52,9 @@ function deplyProduct() {
         star.className="star-rating";
         star.innerHTML = "★ ★ ★ ★ ★";
         star.style.color="orange";
-        star.style.marginRight = "100px";
-        star.style.marginTop = "10px";
-        star.style.marginBottom = "10px";
+        star.style.marginRight = "80px";
+        star.style.marginTop = "5px";
+        star.style.marginBottom = "5px";
 
         let aDelete = document.createElement("a");
         aDelete.href = "";

@@ -291,7 +291,7 @@ nav .nav-bottom .nav-right a {
   background-color: #2FA78A;
   align-items: flex-end;
   text-align: center;
-  height: 55vh;
+  height: 65vh;
   width: 40%;
   margin: auto;
   margin-top: 80px;
@@ -461,6 +461,20 @@ label, input {
   border: none;
   margin: 10px;
   font-size: 30px;
+}
+
+#dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 70vh;
+  width: 70%;
+  background-color: #2FA78A;
+  z-index: 10;
+  margin-top: 5%;
+  color: black;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  border: none;
 }
 
 dialog {

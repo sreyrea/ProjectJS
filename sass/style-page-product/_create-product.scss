@@ -9,7 +9,20 @@
     font-size: 30px;
     
 }
-
+#dialog{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70vh;
+    width: 70%;
+    background-color:$main-color;
+    z-index: 10;
+    margin-top: 5%;
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    border: none;
+    
+}
 dialog{
     
     background-color:$main-color;
@@ -17,14 +30,17 @@ dialog{
     height: 70%;
     border-radius: 10px;
     margin: auto;
+    
     header{
         margin-left: 10px;
         font-size: 30px;
     }
     section{
+
         margin-left: 10px;
         margin-right: 10px;
         margin-top: 10px;
+
         input{
             padding: 10px;
         }
