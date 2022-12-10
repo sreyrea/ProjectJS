@@ -226,8 +226,8 @@ function onCreate(e){
     addProduct();
 }
 
-// saveProduct();
-updateData();
+saveProduct();
+// updateData();
 
 addProduct();
 saveProduct();
