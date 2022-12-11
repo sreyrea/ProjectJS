@@ -73,23 +73,4 @@ function deplyProduct() {
     
 }
 
-function searchProduct(event) {
-    // 1- Get the search text
-    let searchProductInput = document.querySelector("form-control");
-    let search = searchProductInput.value.toLowerCase()
-    // 2- Loop on all LI {
-    for (let x of product.children) {
-      let title = x.children[0].textContent.toLowerCase()
-      x.style.display = "none";
-      // console.log(title)
-        if (title === search || title.includes(search)){
-            console.log(title)
-            x.style.display = "block";
-  
-        }
-    }
-    
-  console.log(x);
-}
-
 deplyProduct();

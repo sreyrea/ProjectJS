@@ -34,7 +34,6 @@ let product =[
 
 function addProduct() {
     card = document.querySelector(".make-up");
-    // console.log(card)
     card.remove();
     card =document.createElement("div");
     card.className="make-up";
@@ -121,8 +120,6 @@ function addProduct() {
         item.appendChild(edit);
         card.appendChild(item);
     }
-    // saveProduct();
-    // console.log(Class_make_up);
 }
 
 // hide show dialog------------------------------------------------!
@@ -144,21 +141,12 @@ function onClickAddPro(e){
 }
 
 
-// cancel button-------------------------------------------------------!
-function clearData(){
-
-    newProduct.namePro = "";
-    newProduct.price = "";
-    newProduct.Image = "";
-    newProduct.Detial = "";
-}
-
-// save product -------------------------------------------------------------!
+// save product to local storage -------------------------------------------------------------!
 function saveProduct() {
     localStorage.setItem("product", JSON.stringify(product));
 }
 
-// update data -------------------------------------------------------------!
+// update data  -------------------------------------------------------------!
 
 function updateData() {
     let data = JSON.parse(localStorage.getItem("product"));
@@ -167,35 +155,20 @@ function updateData() {
     }
 }
 
-
-
-
-
-
 // edit product-------------------------------------------------------------!
-
-
 
 function editProduct(event) {
     show(dom_dialog);
     document.querySelector("menu").lastElementChild.textContent = "Edit";
     let index = event.target.parentElement.parentElement.dataset.index;
-
-    console.log(index)
     let myPro = product[index];
     document.querySelector("#name").value = myPro.namePro;
     console.log(myPro.namePro);
     document.querySelector("#price").value = myPro.price;
     document.querySelector("#Photos").value = myPro.Image;
     document.querySelector("#detail-more").value = myPro.Detial;
-    // console.log(myPro)
-    
-
     product.splice(index,1);
     saveProduct();
-    // addProduct();
-
-    
 }
 
 
@@ -205,9 +178,7 @@ function deleteProduct(event) {
     event.preventDefault();
 
     let index = event.target.parentElement.parentElement.parentElement.dataset.index;
-    
-    
-    console.log(index)
+
     product.splice(index,1);
 
   // Save to local storage
@@ -222,18 +193,14 @@ function onCancel(e){
 // create product button--------------------------------------------------!
 
 function onCreate(e){
-    // clearData();
     hide(dom_dialog);
-    // clearData();
-    
     let newProduct = {};
     newProduct.namePro = document.getElementById("name").value;
     newProduct.price = document.getElementById("price").value;
     newProduct.Image = document.getElementById("Photos").value;
     newProduct.Detial = document.getElementById("detail-more").value;
     product.push(newProduct); 
-    // console.log(newProduct.Image);
-    
+
     saveProduct();
     addProduct();
 }
